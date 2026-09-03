@@ -10,6 +10,14 @@
 
 # Skills For Real Engineers
 
+> [!NOTE]
+> **OpenAI / ChatGPT compatibility distribution.** This repository tracks Matt Pocock's upstream skills and adds an OpenAI plugin manifest, harness-neutral orchestration patches, validation, and CI. See [`UPSTREAM.md`](./UPSTREAM.md) and [`PATCHES.md`](./PATCHES.md).
+
+### OpenAI / ChatGPT / Codex plugin
+
+This fork is designed to be consumed as an OpenAI skills plugin from `.codex-plugin/plugin.json`. The stable skill set remains the same as upstream; `agents/openai.yaml` controls OpenAI invocation policy per skill.
+
+
 [![skills.sh](https://skills.sh/b/mattpocock/skills)](https://skills.sh/mattpocock/skills)
 
 My agent skills that I use every day to do real engineering - not vibe coding.
