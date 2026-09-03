@@ -33,8 +33,12 @@ if (exists('.codex-plugin/plugin.json')) {
 }
 
 if (codexManifest) {
-  if (codexManifest.name !== 'mattpocock-skills-openai') {
-    fail('OpenAI plugin name must be mattpocock-skills-openai');
+  const marketplace = JSON.parse(read('.claude-plugin/marketplace.json'));
+  const marketplacePlugin = marketplace.plugins?.find((plugin) => plugin.source === './');
+  if (!marketplacePlugin) {
+    fail('marketplace must expose the repository-root plugin');
+  } else if (codexManifest.name !== marketplacePlugin.name) {
+    fail(`plugin identity mismatch: manifest=${codexManifest.name} marketplace=${marketplacePlugin.name}`);
   }
   if (!Array.isArray(codexManifest.skills) || codexManifest.skills.length === 0) {
     fail('OpenAI plugin manifest must declare stable skills');
