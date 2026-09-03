@@ -6,7 +6,7 @@
 
 **Architecture:** Preserve upstream history and skill files, add an OpenAI plugin shell and a small compatibility/validation layer, and patch only host-specific runtime assumptions. CI executes deterministic repository validation.
 
-**Tech Stack:** Markdown Agent Skills, YAML, JSON, Node.js 20, GitHub Actions, GitHub CLI.
+**Tech Stack:** Markdown Agent Skills, YAML, JSON, Node.js 22, GitHub Actions, GitHub CLI.
 
 **Spec:** `docs/superpowers/specs/2026-09-03-openai-chatgpt-skills-plugin-design.md`
 
@@ -46,7 +46,7 @@
 **Files:** create `.github/workflows/openai-plugin.yml`, `evals/activation-cases.json`.
 - [ ] Add fixture validation requiring positive/negative examples for explicit-only and model-invoked skill classes.
 - [ ] Run validation and confirm RED before the fixture exists.
-- [ ] Add representative activation cases and CI running Node 20 + `npm run validate:openai`.
+- [ ] Add representative activation cases and CI running Node 22 + `npm run validate:openai`.
 - [ ] Re-run validation locally and inspect workflow syntax.
 - [ ] Commit `ci: validate OpenAI plugin compatibility`.
 
