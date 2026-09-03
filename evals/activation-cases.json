@@ -1,0 +1,38 @@
+[
+  {
+    "skill": "to-spec",
+    "class": "explicit-only",
+    "prompt": "$to-spec turn our agreed discussion into the project spec",
+    "shouldInvoke": true
+  },
+  {
+    "skill": "to-spec",
+    "class": "explicit-only",
+    "prompt": "We have talked through the feature; what should we do next?",
+    "shouldInvoke": false
+  },
+  {
+    "skill": "implement",
+    "class": "explicit-only",
+    "prompt": "$implement issue #42 using the approved acceptance criteria",
+    "shouldInvoke": true
+  },
+  {
+    "skill": "implement",
+    "class": "explicit-only",
+    "prompt": "Review this issue and explain the requested behavior only",
+    "shouldInvoke": false
+  },
+  {
+    "skill": "tdd",
+    "class": "model-invoked",
+    "prompt": "Fix this bug test-first with a red-green loop",
+    "shouldInvoke": true
+  },
+  {
+    "skill": "diagnosing-bugs",
+    "class": "model-invoked",
+    "prompt": "This intermittent regression is hard to reproduce; diagnose it systematically before changing code",
+    "shouldInvoke": true
+  }
+]
