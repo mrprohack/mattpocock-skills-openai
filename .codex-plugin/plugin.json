@@ -1,5 +1,5 @@
 {
-  "name": "mattpocock-skills-openai",
+  "name": "mattpocock-skills",
   "version": "1.2.3-openai.1",
   "description": "OpenAI/ChatGPT-compatible distribution of Matt Pocock's real-engineering agent skills, with Codex invocation metadata, harness-neutral orchestration, and validation.",
   "author": {
