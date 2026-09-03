@@ -98,6 +98,13 @@ for (const skillPath of stableSkills) {
   }
 }
 
+if (exists('.github/workflows/release.yml')) {
+  const releaseWorkflow = read('.github/workflows/release.yml');
+  if (/changesets\/action@/i.test(releaseWorkflow)) {
+    fail('compatibility fork must not use changesets/action because GITHUB_TOKEN cannot create version pull requests');
+  }
+}
+
 if (exists('evals/activation-cases.json')) {
   try {
     const cases = JSON.parse(read('evals/activation-cases.json'));
