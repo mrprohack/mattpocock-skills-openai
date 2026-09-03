@@ -62,7 +62,7 @@ npx skills@latest add mattpocock/skills
 
 Pick the skills you want, and which coding agents to install them on. **The installer lets you choose which skills to take, so make sure `setup-matt-pocock-skills` is one of them.**
 
-A native Codex plugin is on the roadmap (see [`.agents/adr/0002-ship-as-a-claude-code-plugin.md`](./.agents/adr/0002-ship-as-a-claude-code-plugin.md)).
+Upstream tracks a native Codex plugin on its roadmap; **this compatibility fork already adds `.codex-plugin/plugin.json`** while keeping the `npx skills` installation path available.
 
 </details>
 
