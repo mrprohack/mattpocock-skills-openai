@@ -75,15 +75,22 @@ const coreOrchestrators = [
   'skills/engineering/to-tickets/SKILL.md',
   'skills/engineering/setup-matt-pocock-skills/SKILL.md',
 ];
-const forbiddenPatterns = [
+const coreForbiddenPatterns = [
   { pattern: /\bUse \/tdd\b/i, label: 'slash-command dependency on /tdd' },
   { pattern: /\buse \/code-review\b/i, label: 'slash-command dependency on /code-review' },
-  { pattern: /tell the user to run `\/setup-matt-pocock-skills`/i, label: 'Claude-style setup command wording' },
 ];
 for (const file of coreOrchestrators) {
   const body = read(file);
-  for (const rule of forbiddenPatterns) {
+  for (const rule of coreForbiddenPatterns) {
     if (rule.pattern.test(body)) fail(`${file}: ${rule.label}`);
+  }
+}
+
+for (const skillPath of stableSkills) {
+  const file = `${skillPath.replace(/^\.\//, '')}/SKILL.md`;
+  const body = read(file);
+  if (/tell the user to run `\/setup-matt-pocock-skills`/i.test(body)) {
+    fail(`${file}: Claude-style setup command wording`);
   }
 }
 
